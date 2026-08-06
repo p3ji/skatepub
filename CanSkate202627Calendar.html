@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar 2026/2027</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #28395b;
+      --primary-accent: #7a51a1;
+      --accent-blue: #9a00fe;
+      --ice-bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-dark: #1e293b;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      
+      --canskate-color: #9a00fe;
+      --canskate-bg: #dbeafe;
+      --precan-color: #0d9488;
+      --precan-bg: #ccfbf1;
+      --prejunior-color: #d97706;
+      --prejunior-bg: #fef3c7;
+      --edges-color: #7c3aed;
+      --edges-bg: #ede9fe;
+      --teen-color: #c026d3;
+      --teen-bg: #fae8ff;
+      --adult-color: #ea580c;
+      --adult-bg: #ffedd5;
+      
+      --noskate-bg: #fee2e2;
+      --noskate-color: #991b1b;
+      --noskate-border: #fca5a5;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #f1f5f9;
+      color: var(--text-dark);
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* Header Banner */
+    .club-header {
+      background: linear-gradient(135deg, #28395b 0%, #7a51a1 50%, #5c3d7a 100%);
+      color: #ffffff;
+      padding: 28px 32px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2);
+    }
+    .header-branding {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .main-logo {
+      height: 64px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #ffffff;
+      padding: 4px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    .club-header h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+    .club-header p {
+      color: #d4bdf2;
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    .nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+    .nav-pill {
+      background: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(4px);
+    }
+    .nav-pill:hover {
+      background: #ffffff;
+      color: #7a51a1;
+      transform: translateY(-1px);
+    }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Master Schedule Table */
+    .master-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+    .master-table th {
+      background-color: #f8fafc;
+      color: var(--primary);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    .master-table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .master-table tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+    .master-table tr:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.775rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .tag-canskate { background: var(--canskate-bg); color: var(--canskate-color); }
+    .tag-precan { background: var(--precan-bg); color: var(--precan-color); }
+    .tag-prejunior { background: var(--prejunior-bg); color: var(--prejunior-color); }
+    .tag-edges { background: var(--edges-bg); color: var(--edges-color); }
+    .tag-teen { background: var(--teen-bg); color: var(--teen-color); }
+    .tag-adult { background: var(--adult-bg); color: var(--adult-color); }
+
+    /* Monthly Cards */
+    .month-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+      page-break-inside: avoid;
+    }
+    .month-header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+    .month-title-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .month-header-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      padding: 2px;
+      background: #ffffff;
+    }
+    .month-header h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .month-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .month-subtitle span {
+      color: var(--accent-blue);
+      font-weight: 700;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+    }
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    .calendar-table th {
+      background: #28395b;
+      color: #ffffff;
+      padding: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .calendar-table td {
+      border: 1px solid var(--border-color);
+      height: 115px;
+      vertical-align: top;
+      padding: 6px;
+      background: #ffffff;
+      transition: background 0.15s ease;
+    }
+    .empty-cell {
+      background: #f8fafc !important;
+    }
+    .day-number {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .session-header {
+      background: #e2e8f0;
+      color: #1e293b;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 6px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .session-header.last-header {
+      background: #fef08a;
+      color: #854d0e;
+      border: 1px solid #fde047;
+    }
+    .last-session-tag {
+      font-size: 0.65rem;
+      background: #ca8a04;
+      color: #ffffff;
+      padding: 1px 4px;
+      border-radius: 3px;
+      margin-left: 2px;
+    }
+
+    .slot-item {
+      font-size: 0.72rem;
+      line-height: 1.25;
+      margin-bottom: 3px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .slot-time {
+      font-weight: 600;
+      color: var(--text-muted);
+      font-size: 0.68rem;
+    }
+    .slot-badge {
+      display: block;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.7rem;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .event-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 6px;
+      border-radius: 4px;
+      text-align: center;
+      margin-top: 4px;
+    }
+    .event-noskate {
+      background: var(--noskate-bg);
+      color: var(--noskate-color);
+      border: 1px solid var(--noskate-border);
+    }
+    .event-special {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .event-clinic {
+      background: #e0e7ff;
+      color: #3730a3;
+      border: 1px solid #c7d2fe;
+    }
+
+    .no-skating-cell {
+      background: #fff5f5 !important;
+    }
+    .session-active-cell:hover {
+      background: #f8fafc;
+    }
+
+    /* Print Styles */
+    @media print {
+      body { background: #ffffff; padding: 0; }
+      .club-header { background: #28395b !important; color: #ffffff !important; padding: 16px; margin-bottom: 12px; }
+      .nav-pills { display: none; }
+      .month-card { page-break-after: always; box-shadow: none; border: 1px solid #000; padding: 12px; margin-bottom: 0; }
+      .calendar-table td { height: 95px; }
+      .month-header-logo { height: 40px; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Banner -->
+    <header class="club-header">
+      <div class="header-branding">
+        <img src="images/image1.jpg" alt="MKSC Club Logo" class="main-logo">
+        <div>
+          <h1>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h1>
+          <p>Official 2026 / 2027 Season Master Schedule & Monthly Session Calendar</p>
+        </div>
+      </div>
+      
+      <nav class="nav-pills">
+        <a href="#master-schedule" class="nav-pill">📋 Master Schedule</a>
+        <a href="#month-9-2026" class="nav-pill">Sep 2026</a>
+        <a href="#month-10-2026" class="nav-pill">Oct 2026</a>
+        <a href="#month-11-2026" class="nav-pill">Nov 2026</a>
+        <a href="#month-12-2026" class="nav-pill">Dec 2026</a>
+        <a href="#month-1-2027" class="nav-pill">Jan 2027</a>
+        <a href="#month-2-2027" class="nav-pill">Feb 2027</a>
+        <a href="#month-3-2027" class="nav-pill">Mar 2027</a>
+      </nav>
+    </header>
+
+    <!-- Master Schedule Reference Table -->
+    <section class="section-card" id="master-schedule">
+      <div class="section-title">
+        <span>Master Program Schedule Overview (19 Program Specifications)</span>
+        <span style="font-size:0.85rem; font-weight:500; color:var(--text-muted);">Verified against reference email</span>
+      </div>
+      <div class="table-responsive">
+        <table class="master-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Time Slot</th>
+              <th>Program Description</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Sessions</th>
+              <th>No Skating Dates</th>
+              <th>Max Reg</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><strong>Sunday</strong></td>
+              <td>2 to 2:50pm</td>
+              <td><span class="badge tag-edges">Advanced Edges and Skating Skills</span></td>
+              <td>Sept 13</td>
+              <td>Mar 7</td>
+              <td><strong>24</strong></td>
+              <td>Dec 20, Dec 27</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td><strong>Sunday</strong></td>
+              <td>3 to 3:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 13</td>
+              <td>Mar 7</td>
+              <td><strong>24</strong></td>
+              <td>Dec 20, Dec 27</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td><strong>Monday</strong></td>
+              <td>8 to 8:50pm</td>
+              <td><span class="badge tag-adult">ADULT</span></td>
+              <td>Sept 14</td>
+              <td>Mar. 29</td>
+              <td><strong>27</strong></td>
+              <td>Dec 21, Dec 28</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td><strong>Wednesday</strong></td>
+              <td>4 to 4:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 16</td>
+              <td>Mar. 10</td>
+              <td><strong>24</strong></td>
+              <td>Dec 23,Dec 30</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td><strong>Wednesday</strong></td>
+              <td>5 to 5:25pm</td>
+              <td><span class="badge tag-precan">PreCan</span></td>
+              <td>Sept 16</td>
+              <td>Mar. 10</td>
+              <td><strong>24</strong></td>
+              <td>Dec 23,Dec 30</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Wednesday</strong></td>
+              <td>5:25 to 5:50pm</td>
+              <td><span class="badge tag-precan">PreCan</span></td>
+              <td>Sept 16</td>
+              <td>Mar. 10</td>
+              <td><strong>24</strong></td>
+              <td>Dec 23,Dec 30</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Wednesday</strong></td>
+              <td>5 to 5:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 16</td>
+              <td>Mar. 10</td>
+              <td><strong>24</strong></td>
+              <td>Dec 23,Dec 30</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td><strong>Wednesday</strong></td>
+              <td>6 to 7:00pm</td>
+              <td><span class="badge tag-prejunior">PreJunior</span></td>
+              <td>Sept 16</td>
+              <td>Mar. 10</td>
+              <td><strong>24</strong></td>
+              <td>Dec 23, Dec 30</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td><strong>Friday</strong></td>
+              <td>4 to 4:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 18</td>
+              <td>Mar. 12</td>
+              <td><strong>24</strong></td>
+              <td>Dec 25,Jan 1</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td><strong>Friday</strong></td>
+              <td>4 to 4:25pm</td>
+              <td><span class="badge tag-precan">PreCan</span></td>
+              <td>Sept 18</td>
+              <td>Mar. 12</td>
+              <td><strong>24</strong></td>
+              <td>Dec 25,Jan 1</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Friday</strong></td>
+              <td>4:25 to 4:50pm</td>
+              <td><span class="badge tag-precan">PreCan</span></td>
+              <td>Sept 18</td>
+              <td>Mar. 12</td>
+              <td><strong>24</strong></td>
+              <td>Dec 25,Jan 1</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Friday</strong></td>
+              <td>5 to 5:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 18</td>
+              <td>Mar. 12</td>
+              <td><strong>24</strong></td>
+              <td>Dec 25,Jan 1</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td><strong>Friday</strong></td>
+              <td>6 to 6:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 18</td>
+              <td>Mar. 12</td>
+              <td><strong>24</strong></td>
+              <td>Dec 25,Jan 1</td>
+              <td>60</td>
+            </tr>
+            <tr>
+              <td><strong>Friday</strong></td>
+              <td>7 to 7:50pm</td>
+              <td><span class="badge tag-canskate">Teen/Tween</span></td>
+              <td>Sept 18</td>
+              <td>Mar. 12</td>
+              <td><strong>24</strong></td>
+              <td>Dec 25,Jan 1</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td><strong>Saturday</strong></td>
+              <td>12 to 12:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 19</td>
+              <td>Mar. 13</td>
+              <td><strong>24</strong></td>
+              <td>Dec 26, Jan 2</td>
+              <td>50</td>
+            </tr>
+            <tr>
+              <td><strong>Saturday</strong></td>
+              <td>12 to 12:25pm</td>
+              <td><span class="badge tag-precan">PreCan</span></td>
+              <td>Sept 19</td>
+              <td>Mar. 13</td>
+              <td><strong>24</strong></td>
+              <td>Dec 26, Jan 2</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Saturday</strong></td>
+              <td>12:25 to 12:50pm</td>
+              <td><span class="badge tag-precan">PreCan</span></td>
+              <td>Sept 19</td>
+              <td>Mar. 13</td>
+              <td><strong>24</strong></td>
+              <td>Dec 26, Jan 2</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td><strong>Saturday</strong></td>
+              <td>1 to 1:50pm</td>
+              <td><span class="badge tag-canskate">CanSkate</span></td>
+              <td>Sept 19</td>
+              <td>Mar. 13</td>
+              <td><strong>24</strong></td>
+              <td>Dec 26, Jan 2</td>
+              <td>30</td>
+            </tr>
+            <tr>
+              <td><strong>Saturday</strong></td>
+              <td>1 to 1:50pm</td>
+              <td><span class="badge tag-prejunior">PreJunior</span></td>
+              <td>Sept 19</td>
+              <td>Mar. 13</td>
+              <td><strong>24</strong></td>
+              <td>Dec 26, Jan 2</td>
+              <td>20</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<div class="month-card" id="month-9-2026">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>September 2026</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="day-cell">
+            <div class="day-number">1</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">2</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">3</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">4</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">5</div>
+            <div class="event-badge event-clinic">PA CLINIC</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell">
+            <div class="day-number">6</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">7</div>
+            <div class="event-badge event-noskate">Labor Day - NO SKATING</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">8</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">9</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">10</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">11</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">12</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">13</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">14</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">15</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">16</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">17</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">18</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">19</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">20</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">21</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">22</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">23</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">24</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">25</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">26</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">27</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">28</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">29</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">30</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="month-card" id="month-10-2026">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>October 2026</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="day-cell">
+            <div class="day-number">1</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">2</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">3</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">4</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">5</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">6</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">7</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">8</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">9</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">10</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">11</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">12</div>
+            <div class="event-badge event-special" style="margin-bottom:4px;">Thanksgiving</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">13</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">14</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">15</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">16</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">17</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">18</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">19</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">20</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">21</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">22</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">23</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">24</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">25</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">26</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">27</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">28</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">29</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">30</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">31</div>
+            <div class="event-badge event-special">Halloween</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="month-card" id="month-11-2026">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>November 2026</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">1</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">2</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">3</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">4</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">5</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">6</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">7</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">8</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">9</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">10</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">11</div>
+            <div class="event-badge event-special">Remembrance Day</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">12</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">13</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">14</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">15</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">16</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">17</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">18</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">19</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">20</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">21</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">22</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">23</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">24</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">25</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">26</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">27</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">28</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">29</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">30</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="month-card" id="month-12-2026">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>December 2026</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="day-cell">
+            <div class="day-number">1</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">2</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">3</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">4</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">5</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">6</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">7</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">8</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">9</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">10</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">11</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">12</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">13</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">14</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">15</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">16</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">17</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">18</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">19</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">20</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">21</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">22</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">23</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">24</div>
+            <div class="event-badge event-noskate">Christmas Eve - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">25</div>
+            <div class="event-badge event-noskate">Christmas Day - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">26</div>
+            <div class="event-badge event-noskate">Boxing Day - NO SKATING</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">27</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">28</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">29</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">30</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">31</div>
+            <div class="event-badge event-noskate">New Year&#x27;s Eve - NO SKATING</div>
+          </td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="month-card" id="month-1-2027">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>January 2027</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">1</div>
+            <div class="event-badge event-noskate">New Year&#x27;s Day - NO SKATING</div>
+          </td>
+          <td class="day-cell no-skating-cell">
+            <div class="day-number">2</div>
+            <div class="event-badge event-noskate">Winter Break - NO SKATING</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">3</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">4</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">5</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">6</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">7</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">8</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">9</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">10</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">11</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">12</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">13</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">14</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">15</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">16</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">17</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">18</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">19</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">20</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">21</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">22</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">23</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">24</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">25</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">26</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">27</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">28</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">29</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">30</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">31</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="month-card" id="month-2-2027">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>February 2027</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="empty-cell"></td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">1</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">2</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">3</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">4</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">5</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">6</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">7</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">8</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">9</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">10</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">11</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">12</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">13</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">14</div>
+            <div class="event-badge event-special">Valentine&#x27;s Day</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">15</div>
+            <div class="event-badge event-special">Family Day (SKATING ON)</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">16</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">17</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">18</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">19</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">20</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">21</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">22</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">23</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">24</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">25</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">26</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">27</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">28</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="month-card" id="month-3-2027">
+  <div class="month-header">
+    <div class="month-title-row">
+      <img src="images/image1.jpg" alt="MKSC Club Logo" class="month-header-logo">
+      <div>
+        <h2>MKSC CanSkate / Pre-Junior / Pre-CanSkate / Adult & Teens Calendar</h2>
+        <div class="month-subtitle">2026/2027 Season &nbsp;|&nbsp; <span>March 2027</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="calendar-table">
+      <thead><tr class="day-headers">
+        <th>Sun</th>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="empty-cell"></td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">1</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">2</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">3</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">4</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">5</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">6</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell session-active-cell">
+            <div class="day-number-row"><span class="day-number">7</span> <span class="last-session-tag">LAST SESSION</span></div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">2:00 – 2:50 pm</span> <span class="slot-badge tag-edges">Adv Edges & Skills</span></div>
+            <div class="slot-item"><span class="slot-time">3:00 – 3:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">8</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">9</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number-row"><span class="day-number">10</span> <span class="last-session-tag">LAST SESSION</span></div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:25 – 5:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 7:00 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">11</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number-row"><span class="day-number">12</span> <span class="last-session-tag">LAST SESSION</span></div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">4:00 – 4:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">4:00 – 4:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">4:25 – 4:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">5:00 – 5:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">6:00 – 6:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">7:00 – 7:50 pm</span> <span class="slot-badge tag-teen">Teen / Tween</span></div>
+            </div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number-row"><span class="day-number">13</span> <span class="last-session-tag">LAST SESSION</span></div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">12:00 – 12:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">12:00 – 12:25 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">12:25 – 12:50 pm</span> <span class="slot-badge tag-precan">PreCan</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-canskate">CanSkate</span></div>
+            <div class="slot-item"><span class="slot-time">1:00 – 1:50 pm</span> <span class="slot-badge tag-prejunior">PreJunior</span></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell">
+            <div class="day-number">14</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">15</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">16</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">17</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">18</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">19</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">20</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell">
+            <div class="day-number">21</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number">22</div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">23</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">24</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">25</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">26</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">27</div>
+          </td>
+        </tr>
+        <tr>
+          <td class="day-cell">
+            <div class="day-number">28</div>
+          </td>
+          <td class="day-cell session-active-cell">
+            <div class="day-number-row"><span class="day-number">29</span> <span class="last-session-tag">LAST SESSION</span></div>
+            <div class="program-slots">
+            <div class="slot-item"><span class="slot-time">8:00 – 8:50 pm</span> <span class="slot-badge tag-adult">Adult CanSkate</span></div>
+            </div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">30</div>
+          </td>
+          <td class="day-cell">
+            <div class="day-number">31</div>
+          </td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+          <td class="empty-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+  </div>
+
+  <!-- Actions Section -->
+  <div class="actions-section no-print" style="margin-top: 40px; margin-bottom: 40px; text-align: center; background: #ffffff; padding: 24px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); border: 1px solid var(--border-color);">
+    <h3 style="color: var(--primary); margin-bottom: 16px;">Calendar Tools</h3>
+    
+    <button onclick="window.print()" style="background: var(--primary-accent); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; margin-right: 16px; font-size: 1rem; transition: background 0.2s;">🖨️ Print Calendar</button>
+    
+    <a href="adult_canskate.ics" download style="display: inline-block; background: var(--canskate-color); color: white; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 1rem; transition: background 0.2s;">📅 Download Adult CanSkate Calendar (.ics)</a>
+    
+    <div style="margin-top: 24px; text-align: left; background: #f8fafc; padding: 16px; border-radius: 8px; font-size: 0.95rem; color: var(--text-dark); max-width: 600px; margin-left: auto; margin-right: auto;">
+      <strong>How to upload to Google Calendar:</strong>
+      <ol style="margin-top: 12px; margin-left: 20px; line-height: 1.6;">
+        <li>Click the download button above to save the <code>.ics</code> file to your computer.</li>
+        <li>Open <a href="https://calendar.google.com" target="_blank" style="color: var(--accent-blue);">Google Calendar</a> in your web browser.</li>
+        <li>In the top right, click the <strong>Settings gear icon</strong> &gt; <strong>Settings</strong>.</li>
+        <li>On the left menu, click <strong>Import &amp; export</strong>.</li>
+        <li>Click <strong>Select file from your computer</strong> and choose the downloaded <code>adult_canskate.ics</code> file.</li>
+        <li>Choose which calendar you want to add the events to, then click <strong>Import</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+</html>
